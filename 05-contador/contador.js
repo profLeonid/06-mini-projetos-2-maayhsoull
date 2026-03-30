@@ -28,7 +28,7 @@ function criarLinha(numero, par, impar, mult5, potencia2){
     tdPotencia2.textContent = potencia2
 
 
-    tr.replaceChildren(tdNumeros, tdPares, tdImpares, tdMult5, tdPotencia2)
+    tr.replaceChildren(tdNumeros, tdImpares, tdPares, tdMult5, tdPotencia2)
     tabela.appendChild(tr)
 }
 
@@ -44,8 +44,10 @@ function preencherTabela(){
     const listaMult5 = criarListaMult5(quantidade)
     const listaPotencia2 = criarListaPotencia2(quantidade)
 
-    criarLinha()
-
+    document.getElementById('tabela').replaceChildren()
+    for (let i=0; i < quantidade; i++){
+        criarLinha(listaNumeros[i], listaImpares[i],listaPares[i],listaMult5[i],listaPotencia2[i])
+    }
 }
 
 gerarNumeros.addEventListener('click', preencherTabela)
