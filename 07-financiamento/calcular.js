@@ -28,5 +28,3 @@ export function calcularJuros(valorTotal, txJuros, numParcelas){
     return mes
 
 }
-
-console.log(calcularJuros(12000, 1.5, 12))
